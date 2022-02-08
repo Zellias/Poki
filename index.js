@@ -82,7 +82,7 @@ client.on("channelCreate", async function (channel) {
                         ${executor.tag} Was Created ${limit} Channel's And i punished Him !
                         `)
                         .setColor('#00ebff')
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                 }).catch(async err => {
                     const embed = new MessageEmbed()
                         .setColor('ffff00')
@@ -94,7 +94,7 @@ client.on("channelCreate", async function (channel) {
                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                     const owner = client.users.cache.get((await channel.guild.fetchOwner()).user.id)
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                 });
 
             } else if (punish === 'kick') {
@@ -109,7 +109,7 @@ client.on("channelCreate", async function (channel) {
                         ${executor.tag} Was Created ${limit} Channel's And i punished Him !
                         `)
                         .setColor('#00ebff')
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                 }).catch(async err => {
@@ -123,7 +123,7 @@ client.on("channelCreate", async function (channel) {
                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                     const owner = client.users.cache.get((await channel.guild.fetchOwner()).user.id)
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                 })
 
@@ -149,7 +149,7 @@ client.on("channelCreate", async function (channel) {
                                     ${executor.tag} Was Created ${limit} Channel's And i punished Him !
                                     `)
                                     .setColor('#00ebff')
-                                owner.send({ content: `${owner}`, embeds: [embed] })
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                             }).catch(async err => {
@@ -163,7 +163,7 @@ client.on("channelCreate", async function (channel) {
                                     .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                                     .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                                 const owner = client.users.cache.get((await channel.guild.fetchOwner()).user.id)
-                                owner.send({ content: `${owner}`, embeds: [embed] })
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                             })
                         } else {
@@ -228,7 +228,7 @@ client.on("channelDelete", async function (channel) {
                         ${executor.tag} Was Deleted ${limit} Channel's And i punished Him !
                         `)
                         .setColor('#00ebff')
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                 }).catch(async err => {
                     const embed = new MessageEmbed()
                         .setColor('ffff00')
@@ -240,7 +240,7 @@ client.on("channelDelete", async function (channel) {
                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                     const owner = client.users.cache.get((await channel.guild.fetchOwner()).user.id)
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                 });
 
             } else if (punish === 'kick') {
@@ -255,7 +255,7 @@ client.on("channelDelete", async function (channel) {
                         ${executor.tag} Was Deleted ${limit} Channel's And i punished Him !
                         `)
                         .setColor('#00ebff')
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                 }).catch(async err => {
@@ -269,7 +269,7 @@ client.on("channelDelete", async function (channel) {
                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                     const owner = client.users.cache.get((await channel.guild.fetchOwner()).user.id)
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                 })
 
@@ -295,7 +295,7 @@ client.on("channelDelete", async function (channel) {
                                     ${executor.tag} Was Deleted ${limit} Channel's And i punished Him !
                                     `)
                                     .setColor('#00ebff')
-                                owner.send({ content: `${owner}`, embeds: [embed] })
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                             }).catch(async err => {
@@ -309,7 +309,7 @@ client.on("channelDelete", async function (channel) {
                                     .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                                     .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                                 const owner = client.users.cache.get((await channel.guild.fetchOwner()).user.id)
-                                owner.send({ content: `${owner}`, embeds: [embed] })
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                             })
                         } else {
@@ -377,7 +377,7 @@ client.on("roleDelete", async function (role) {
                     ${executor.tag} Was Deleted ${limit} Roles And i punished Him !
                     `)
                         .setColor('#00ebff')
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                 }).catch(async err => {
                     const embed = new MessageEmbed()
                         .setColor('ffff00')
@@ -389,7 +389,7 @@ client.on("roleDelete", async function (role) {
                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                     const owner = client.users.cache.get((await role.guild.fetchOwner()).user.id)
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                 });
 
             } else if (punish === 'kick') {
@@ -404,7 +404,7 @@ client.on("roleDelete", async function (role) {
                     ${executor.tag} Was Deleted ${limit} Roles And i punished Him !
                     `)
                         .setColor('#00ebff')
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                 }).catch(async err => {
@@ -418,7 +418,7 @@ client.on("roleDelete", async function (role) {
                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                     const owner = client.users.cache.get((await role.guild.fetchOwner()).user.id)
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                 })
 
@@ -444,7 +444,7 @@ client.on("roleDelete", async function (role) {
                                 ${executor.tag} Was Deleted ${limit} Roles And i punished Him !
                                 `)
                                     .setColor('#00ebff')
-                                owner.send({ content: `${owner}`, embeds: [embed] })
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                             }).catch(async err => {
@@ -458,7 +458,7 @@ client.on("roleDelete", async function (role) {
                                     .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                                     .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                                 const owner = client.users.cache.get((await role.guild.fetchOwner()).user.id)
-                                owner.send({ content: `${owner}`, embeds: [embed] })
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                             })
                         } else {
@@ -523,7 +523,7 @@ client.on("roleCreate", async function (role) {
                         ${executor.tag} Was Created ${limit} Roles And i punished Him !
                         `)
                         .setColor('#00ebff')
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                 }).catch(async err => {
                     const embed = new MessageEmbed()
                         .setColor('ffff00')
@@ -535,7 +535,7 @@ client.on("roleCreate", async function (role) {
                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                     const owner = client.users.cache.get((await role.guild.fetchOwner()).user.id)
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                 });
 
             } else if (punish === 'kick') {
@@ -550,7 +550,7 @@ client.on("roleCreate", async function (role) {
                         ${executor.tag} Was Created ${limit} Roles And i punished Him !
                         `)
                         .setColor('#00ebff')
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                 }).catch(async err => {
@@ -564,7 +564,7 @@ client.on("roleCreate", async function (role) {
                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                     const owner = client.users.cache.get((await role.guild.fetchOwner()).user.id)
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                 })
 
@@ -590,7 +590,7 @@ client.on("roleCreate", async function (role) {
                                     ${executor.tag} Was Created ${limit} Roles And i punished Him !
                                     `)
                                     .setColor('#00ebff')
-                                owner.send({ content: `${owner}`, embeds: [embed] })
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                             }).catch(async err => {
@@ -604,7 +604,7 @@ client.on("roleCreate", async function (role) {
                                     .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                                     .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                                 const owner = client.users.cache.get((await role.guild.fetchOwner()).user.id)
-                                owner.send({ content: `${owner}`, embeds: [embed] })
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                             })
                         } else {
@@ -668,7 +668,7 @@ client.on("emojiCreate", async function (emoji) {
                     ${executor.tag} Was Added ${limit} Emoji And i punished Him !
                     `)
                         .setColor('#00ebff')
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                 }).catch(async err => {
                     const embed = new MessageEmbed()
                         .setColor('ffff00')
@@ -680,7 +680,7 @@ client.on("emojiCreate", async function (emoji) {
                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                     const owner = client.users.cache.get((await emoji.guild.fetchOwner()).user.id)
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                 });
 
             } else if (punish === 'kick') {
@@ -695,7 +695,7 @@ client.on("emojiCreate", async function (emoji) {
                     ${executor.tag} Was Added ${limit} Emoji And i punished Him !
                     `)
                         .setColor('#00ebff')
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                 }).catch(async err => {
@@ -709,7 +709,7 @@ client.on("emojiCreate", async function (emoji) {
                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                     const owner = client.users.cache.get((await emoji.guild.fetchOwner()).user.id)
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                 })
 
@@ -735,7 +735,7 @@ client.on("emojiCreate", async function (emoji) {
                                 ${executor.tag} Was Added ${limit} Emoji And i punished Him !
                                 `)
                                     .setColor('#00ebff')
-                                owner.send({ content: `${owner}`, embeds: [embed] })
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                             }).catch(async err => {
@@ -749,7 +749,7 @@ client.on("emojiCreate", async function (emoji) {
                                     .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                                     .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                                 const owner = client.users.cache.get((await emoji.guild.fetchOwner()).user.id)
-                                owner.send({ content: `${owner}`, embeds: [embed] })
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                             })
                         } else {
@@ -814,7 +814,7 @@ client.on("emojiDelete", async function (emoji) {
                     ${executor.tag} Was Removed ${limit} Emoji And i punished Him !
                     `)
                         .setColor('#00ebff')
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                 }).catch(async err => {
                     const embed = new MessageEmbed()
                         .setColor('ffff00')
@@ -826,7 +826,7 @@ client.on("emojiDelete", async function (emoji) {
                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                     const owner = client.users.cache.get((await emoji.guild.fetchOwner()).user.id)
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                 });
 
             } else if (punish === 'kick') {
@@ -841,7 +841,7 @@ client.on("emojiDelete", async function (emoji) {
                     ${executor.tag} Was Removed ${limit} Emoji And i punished Him !
                     `)
                         .setColor('#00ebff')
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                 }).catch(async err => {
@@ -855,7 +855,7 @@ client.on("emojiDelete", async function (emoji) {
                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                     const owner = client.users.cache.get((await emoji.guild.fetchOwner()).user.id)
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                 })
 
@@ -881,7 +881,7 @@ client.on("emojiDelete", async function (emoji) {
                                 ${executor.tag} Was Removed ${limit} Emoji And i punished Him !
                                 `)
                                     .setColor('#00ebff')
-                                owner.send({ content: `${owner}`, embeds: [embed] })
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                             }).catch(async err => {
@@ -895,7 +895,7 @@ client.on("emojiDelete", async function (emoji) {
                                     .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                                     .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                                 const owner = client.users.cache.get((await emoji.guild.fetchOwner()).user.id)
-                                owner.send({ content: `${owner}`, embeds: [embed] })
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                             })
                         } else {
@@ -962,7 +962,7 @@ client.on('guildMemberRemove', async member => {
                             ${executor.tag} Was Kicked ${limit} User And i punished Him !
                             `)
                             .setColor('#00ebff')
-                        owner.send({ content: `${owner}`, embeds: [embed] })
+                        owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                     }).catch(async err => {
                         const embed = new MessageEmbed()
                             .setColor('ffff00')
@@ -974,7 +974,7 @@ client.on('guildMemberRemove', async member => {
                             .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                             .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                         const owner = client.users.cache.get((await member.guild.fetchOwner()).user.id)
-                        owner.send({ content: `${owner}`, embeds: [embed] })
+                        owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                     });
 
                 } else if (punish === 'kick') {
@@ -989,7 +989,7 @@ client.on('guildMemberRemove', async member => {
                             ${executor.tag} Was Kicked ${limit} User And i punished Him !
                             `)
                             .setColor('#00ebff')
-                        owner.send({ content: `${owner}`, embeds: [embed] })
+                        owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                     }).catch(async err => {
@@ -1003,7 +1003,7 @@ client.on('guildMemberRemove', async member => {
                             .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                             .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                         const owner = client.users.cache.get((await member.guild.fetchOwner()).user.id)
-                        owner.send({ content: `${owner}`, embeds: [embed] })
+                        owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                     })
 
@@ -1029,7 +1029,7 @@ client.on('guildMemberRemove', async member => {
                                         ${executor.tag} Was Kicked ${limit} User And i punished Him !
                                         `)
                                         .setColor('#00ebff')
-                                    owner.send({ content: `${owner}`, embeds: [embed] })
+                                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                                 }).catch(async err => {
@@ -1043,7 +1043,7 @@ client.on('guildMemberRemove', async member => {
                                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                                     const owner = client.users.cache.get((await member.guild.fetchOwner()).user.id)
-                                    owner.send({ content: `${owner}`, embeds: [embed] })
+                                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                                 })
                             } else {
@@ -1111,7 +1111,7 @@ client.on('guildBanAdd', async ban => {
                             ${executor.tag} Was Banned ${limit} User And i punished Him !
                             `)
                             .setColor('#00ebff')
-                        owner.send({ content: `${owner}`, embeds: [embed] })
+                        owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                     }).catch(async err => {
                         const embed = new MessageEmbed()
                             .setColor('ffff00')
@@ -1123,7 +1123,7 @@ client.on('guildBanAdd', async ban => {
                             .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                             .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                         const owner = client.users.cache.get((await ban.guild.fetchOwner()).user.id)
-                        owner.send({ content: `${owner}`, embeds: [embed] })
+                        owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                     });
 
                 } else if (punish === 'kick') {
@@ -1138,7 +1138,7 @@ client.on('guildBanAdd', async ban => {
                             ${executor.tag} Was Banned ${limit} User And i punished Him !
                             `)
                             .setColor('#00ebff')
-                        owner.send({ content: `${owner}`, embeds: [embed] })
+                        owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                     }).catch(async err => {
@@ -1152,7 +1152,7 @@ client.on('guildBanAdd', async ban => {
                             .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                             .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                         const owner = client.users.cache.get((await ban.guild.fetchOwner()).user.id)
-                        owner.send({ content: `${owner}`, embeds: [embed] })
+                        owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                     })
 
@@ -1178,7 +1178,7 @@ client.on('guildBanAdd', async ban => {
                                         ${executor.tag} Was Banned ${limit} User And i punished Him !
                                         `)
                                         .setColor('#00ebff')
-                                    owner.send({ content: `${owner}`, embeds: [embed] })
+                                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                                 }).catch(async err => {
@@ -1192,7 +1192,7 @@ client.on('guildBanAdd', async ban => {
                                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                                     const owner = client.users.cache.get((await ban.guild.fetchOwner()).user.id)
-                                    owner.send({ content: `${owner}`, embeds: [embed] })
+                                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                                 })
                             } else {
@@ -1259,7 +1259,7 @@ client.on('guildBanRemove', async ban => {
                     ${executor.tag} Was UnBanned ${limit} User And i punished Him !
                     `)
                             .setColor('#00ebff')
-                        owner.send({ content: `${owner}`, embeds: [embed] })
+                        owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                     }).catch(async err => {
                         const embed = new MessageEmbed()
                             .setColor('ffff00')
@@ -1271,7 +1271,7 @@ client.on('guildBanRemove', async ban => {
                             .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                             .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                         const owner = client.users.cache.get((await ban.guild.fetchOwner()).user.id)
-                        owner.send({ content: `${owner}`, embeds: [embed] })
+                        owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                     });
 
                 } else if (punish === 'kick') {
@@ -1286,7 +1286,7 @@ client.on('guildBanRemove', async ban => {
                     ${executor.tag} Was UnBanned ${limit} User And i punished Him !
                     `)
                             .setColor('#00ebff')
-                        owner.send({ content: `${owner}`, embeds: [embed] })
+                        owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                     }).catch(async err => {
@@ -1300,7 +1300,7 @@ client.on('guildBanRemove', async ban => {
                             .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                             .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                         const owner = client.users.cache.get((await ban.guild.fetchOwner()).user.id)
-                        owner.send({ content: `${owner}`, embeds: [embed] })
+                        owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                     })
 
@@ -1326,7 +1326,7 @@ client.on('guildBanRemove', async ban => {
                                 ${executor.tag} Was UnBanned ${limit} User And i punished Him !
                                 `)
                                         .setColor('#00ebff')
-                                    owner.send({ content: `${owner}`, embeds: [embed] })
+                                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                                 }).catch(async err => {
@@ -1340,7 +1340,7 @@ client.on('guildBanRemove', async ban => {
                                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                                     const owner = client.users.cache.get((await ban.guild.fetchOwner()).user.id)
-                                    owner.send({ content: `${owner}`, embeds: [embed] })
+                                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                                 })
                             } else {
@@ -1406,7 +1406,7 @@ client.on("channelUpdate", async function (oldChannel, newChannel) {
                     ${executor.tag} Was Updated Channel's ${limit} Time ! And i punished Him !
                     `)
                         .setColor('#00ebff')
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                 }).catch(async err => {
                     const embed = new MessageEmbed()
                         .setColor('ffff00')
@@ -1418,7 +1418,7 @@ client.on("channelUpdate", async function (oldChannel, newChannel) {
                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                     const owner = client.users.cache.get((await newChannel.guild.fetchOwner()).user.id)
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                 });
 
             } else if (punish === 'kick') {
@@ -1433,7 +1433,7 @@ client.on("channelUpdate", async function (oldChannel, newChannel) {
                     ${executor.tag} Was Updated Channel's ${limit} Time ! And i punished Him !
                     `)
                         .setColor('#00ebff')
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                 }).catch(async err => {
@@ -1447,7 +1447,7 @@ client.on("channelUpdate", async function (oldChannel, newChannel) {
                         .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                         .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                     const owner = client.users.cache.get((await newChannel.guild.fetchOwner()).user.id)
-                    owner.send({ content: `${owner}`, embeds: [embed] })
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                 })
 
@@ -1473,7 +1473,7 @@ client.on("channelUpdate", async function (oldChannel, newChannel) {
                                 ${executor.tag} Was Updated Channel's ${limit} And i punished Him !
                                 `)
                                     .setColor('#00ebff')
-                                owner.send({ content: `${owner}`, embeds: [embed] })
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                             }).catch(async err => {
@@ -1487,7 +1487,7 @@ client.on("channelUpdate", async function (oldChannel, newChannel) {
                                     .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                                     .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                                 const owner = client.users.cache.get((await newChannel.guild.fetchOwner()).user.id)
-                                owner.send({ content: `${owner}`, embeds: [embed] })
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                             })
                         } else {
@@ -1598,7 +1598,7 @@ client.on("roleUpdate", async function (oldRole, newRole) {
             ${executor.tag} Try to give dangerous permission to ${oldRole.name} , I remove dangerous permission  And i punished Him !
             `)
                                 .setColor('#00ebff')
-                            owner.send({ content: `${owner}`, embeds: [embed] })
+                            owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                         }).catch(async err => {
                             const embed = new MessageEmbed()
                                 .setColor('ffff00')
@@ -1610,7 +1610,7 @@ client.on("roleUpdate", async function (oldRole, newRole) {
                                 .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                                 .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                             const owner = client.users.cache.get((await role.guild.fetchOwner()).user.id)
-                            owner.send({ content: `${owner}`, embeds: [embed] })
+                            owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
                         });
 
                     } else if (punish === 'kick') {
@@ -1625,7 +1625,7 @@ client.on("roleUpdate", async function (oldRole, newRole) {
             ${executor.tag} Try to give dangerous permission to ${oldRole.name} , I remove dangerous permission And i punished Him !
             `)
                                 .setColor('#00ebff')
-                            owner.send({ content: `${owner}`, embeds: [embed] })
+                            owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                         }).catch(async err => {
@@ -1639,7 +1639,7 @@ client.on("roleUpdate", async function (oldRole, newRole) {
                                 .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                                 .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                             const owner = client.users.cache.get((await role.guild.fetchOwner()).user.id)
-                            owner.send({ content: `${owner}`, embeds: [embed] })
+                            owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                         })
 
@@ -1665,7 +1665,7 @@ client.on("roleUpdate", async function (oldRole, newRole) {
                         ${executor.tag} Try to give dangerous permission to ${oldRole.name} , I remove dangerous permission And i punished Him !
                         `)
                                             .setColor('#00ebff')
-                                        owner.send({ content: `${owner}`, embeds: [embed] })
+                                        owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
 
                                     }).catch(async err => {
@@ -1679,7 +1679,7 @@ client.on("roleUpdate", async function (oldRole, newRole) {
                                             .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                                             .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
                                         const owner = client.users.cache.get((await role.guild.fetchOwner()).user.id)
-                                        owner.send({ content: `${owner}`, embeds: [embed] })
+                                        owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
 
                                     })
                                 } else {
