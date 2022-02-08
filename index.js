@@ -11,18 +11,7 @@ const http = require('http')
 //register()
 client.commands = new Collection();
 
-http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hi!');
-}).listen(80, () => {
- console.log(`Server running at port: ` + "3000");
-});
-setInterval(() => {
-    https.get("https://kxaro.herokuapp.com/").on('error', (e) => {
- console.error(e)
- })
-}, 300000)
+
 const commandFolders = fs.readdirSync('./commands')
 for (const folder of commandFolders) {
     const commandFiles = fs.readdirSync(`./commands/${folder}/`).filter(file => file.endsWith('.js'));
