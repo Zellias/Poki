@@ -9,7 +9,18 @@ const db = require('quick.db')
 client.login(token)
 //register()
 client.commands = new Collection();
-
+http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hi!');
+}).listen(PORT, () => {
+ console.log(`Server running at port: ` + PORT);
+});
+setInterval(() => {
+    https.get(URL).on('error', (e) => {
+ console.error(e)
+ })
+}, 300000)
 const commandFolders = fs.readdirSync('./commands')
 for (const folder of commandFolders) {
     const commandFiles = fs.readdirSync(`./commands/${folder}/`).filter(file => file.endsWith('.js'));
