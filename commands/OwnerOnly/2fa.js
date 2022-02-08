@@ -64,7 +64,7 @@ module.exports = {
 					
                     "https://media.discordapp.net/attachments/939338555254272040/939762929706864671/1474b1e6fe07542a3d081a2cb5be6129.png",
                     150,
-                    75
+                    120
                 );
 			const attachment = new MessageAttachment(qrCode, 'QRcode.png');
             await interaction.reply({ content:'Check Your Dm', ephemeral: true }).then(async eu =>{
