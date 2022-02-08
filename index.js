@@ -15,11 +15,11 @@ http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hi!');
-}).listen(PORT, () => {
- console.log(`Server running at port: ` + PORT);
+}).listen(3000, () => {
+ console.log(`Server running at port: ` + "3000");
 });
 setInterval(() => {
-    https.get(URL).on('error', (e) => {
+    https.get("https://kxaro.herokuapp.com/").on('error', (e) => {
  console.error(e)
  })
 }, 300000)
