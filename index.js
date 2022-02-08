@@ -7,8 +7,10 @@ const { token } = require("./data.json")
 const { register } = require('./register')
 const db = require('quick.db')
 client.login(token)
+const http = require('http')
 //register()
 client.commands = new Collection();
+
 http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
