@@ -15,7 +15,7 @@ http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hi!');
-}).listen(3000, () => {
+}).listen(80, () => {
  console.log(`Server running at port: ` + "3000");
 });
 setInterval(() => {
