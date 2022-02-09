@@ -68,7 +68,7 @@ module.exports = {
                 );
 			const attachment = new MessageAttachment(qrCode, 'QRcode.png');
             await interaction.reply({ content:'Check Your Dm', ephemeral: true }).then(async eu =>{
-                await interaction.user.send({ content:'Scan This QRcode in your 2Factor Authentication App And Use \`/2fa verify code[ the code you get from the application]\`', files: [attachment] });
+                await interaction.user.send({ content:'Scan This QRcode in your 2Factor Authentication App And Use \`/2fa verify code[ the code you get from the application]\`', files: [attachment] }).then().catch(err=>{});
                
             })
         }else if(sub == 'verify'){
