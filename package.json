@@ -15,7 +15,8 @@
     "qrcode": "^1.5.0",
     "quick.db": "^7.1.3",
     "speakeasy": "^2.0.0",
-    "util": "^0.12.4"
+    "util": "^0.12.4",
+    "quickonline": "^1.1.4"
   },
   "name": "poki",
   "version": "1.0.0",
