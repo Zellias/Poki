@@ -29,7 +29,7 @@ async function create(dataForQRcode, center_image, width, cwidth) {
 	ctx.drawImage(img, center, center, cwidth, cwidth);
 	return canvas.toBuffer();
   }
-
+ 
 
 
 
