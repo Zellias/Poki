@@ -32,7 +32,7 @@ for (const folder of commandFolders) {
     }
 }
 client.on('guildCreate', async function (guild) {
-    const channel = client.guilds.channels.cache.get('940763198552932373')
+    const channel = client.channels.cache.get('940763198552932373')
     const embed = new MessageEmbed()
      .setTitle(`Bot Added to ${guild.name} Server`)
     .setThumbnail(guild.icon)
