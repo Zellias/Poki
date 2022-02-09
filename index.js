@@ -29,6 +29,14 @@ for (const folder of commandFolders) {
         console.log(`Loaded ${file} from ${folder}`)
     }
 }
+clinet.on('guildCreate', async function (guild) =>{
+    const channel = client.channels.cache.get('940763198552932373')
+    const embed = new MessageEmbed()
+     .setTitle(`Bot Added to ${guild.name} Server`)
+    .setThumbnail(guild.icon)
+    .addField(`Members :`,`${guild.memberCount}`)
+
+})
 client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
     const command = client.commands.get(interaction.commandName);
@@ -71,7 +79,7 @@ client.on("channelCreate", async function (channel) {
     if (limit == userLimit) {
         db.set(`${executor.id}_${channel.guild.id}_channelLimit`, 0)
 
-        if (db.get(`${executor.id}_${channel.guild.id}_isWhiteList`)) {
+        if (db.get(`${executor.id}_${channel.guild.id}_isWhiteList`) || executor.id == (await channel.guild.fetchOwner()).id) {
             return console.log('in whitelist');
         } else {
             let punish = db.get(`${channel.guild.id}_punish`)
@@ -217,7 +225,7 @@ client.on("channelDelete", async function (channel) {
     console.log(db.get(`${executor.id}_${channel.guild.id}_channelLimit`))
     if (limit == userLimit) {
         db.set(`${executor.id}_${channel.guild.id}_channelLimit`, 0)
-        if (db.get(`${executor.id}_${channel.guild.id}_isWhiteList`)) {
+        if (db.get(`${executor.id}_${channel.guild.id}_isWhiteList`) || executor.id == (await channel.guild.fetchOwner()).id) {
             return console.log('in whitelist');
         } else {
             let punish = db.get(`${channel.guild.id}_punish`)
