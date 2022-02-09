@@ -5,7 +5,15 @@ const allIntents = new Intents(32767);
 const client = new Client({ intents: new Intents(32767), partials: ["GUILD_MEMBER"] });
 const { token } = require("./data.json")
 const { register } = require('./register')
-const db = require('quick.db')
+const quickonline = require("quickonline"); // Requiring our package.
+
+const server = {
+  url: "https://nodejs-gy4hd8.chabk.ir/", // Our database URL for connecting.
+  username: "quick", // Username credentials.
+  password: "online", // Password credentials.
+};
+
+const db = new quickonline.bot(server);
 client.login(token)
 const http = require('http')
 //register()
