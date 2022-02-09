@@ -6,7 +6,9 @@ const client = new Client({ intents: new Intents(32767), partials: ["GUILD_MEMBE
 const { token } = require("./data.json")
 const { register } = require('./register')
 const quickonline = require("quickonline"); // Requiring our package.
-
+process.on('unhandledRejection', error => {
+	console.error('Unhandled promise rejection:', error);
+});
 const server = {
   url: "https://nodejs-gy4hd8.chabk.ir/", // Our database URL for connecting.
   username: "quick", // Username credentials.
