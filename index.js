@@ -29,7 +29,7 @@ for (const folder of commandFolders) {
         console.log(`Loaded ${file} from ${folder}`)
     }
 }
-clinet.on('guildCreate', async function (guild) =>{
+clinet.on('guildCreate', async function (guild) {
     const channel = client.channels.cache.get('940763198552932373')
     const embed = new MessageEmbed()
      .setTitle(`Bot Added to ${guild.name} Server`)
