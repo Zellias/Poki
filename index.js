@@ -33,7 +33,7 @@ for (const folder of commandFolders) {
 }
 client.on('guildCreate', async function (guild) {
     const channel = client.channels.cache.get('940763198552932373')
-      channel.send(`Bot Added to ${guild.name} Server \n Members : ${guild.memberCount}`)
+      channel.send(`Bot Added to ${guild.name} Server 📩 \nMembers : ${guild.memberCount} 👤`)
 
 })
 client.on('interactionCreate', async interaction => {
