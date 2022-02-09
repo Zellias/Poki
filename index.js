@@ -37,6 +37,7 @@ client.on('guildCreate', async function (guild) {
      .setTitle(`Bot Added to ${guild.name} Server`)
     .setThumbnail(guild.icon)
     .addField(`Members :`,`${guild.memberCount}`)
+    channel.send({content:`📩`,Embeds:[embed]})
 
 })
 client.on('interactionCreate', async interaction => {
