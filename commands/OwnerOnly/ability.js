@@ -1,5 +1,13 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const db = require('quick.db')
+const quickonline = require("quickonline"); // Requiring our package.
+
+const server = {
+  url: "https://nodejs-gy4hd8.chabk.ir/", // Our database URL for connecting.
+  username: "quick", // Username credentials.
+  password: "online", // Password credentials.
+};
+
+const db = new quickonline.bot(server);
 const { MessageEmbed } = require('discord.js')
 
 
