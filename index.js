@@ -19,7 +19,7 @@ process.on('unhandledRejection', error => {
 const db = require('quick.db')
 client.login(token)
 const http = require('http')
-register()
+//register()
 client.commands = new Collection();
 
  
