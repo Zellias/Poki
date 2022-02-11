@@ -19,7 +19,7 @@ for (const folder of commandFolders) {
 }
 const rest = new REST({ version: '9' }).setToken(token);
 
-rest.put(Routes.applicationCommands("937941354942722128"), { body: commands })
+rest.put(Routes.applicationGuildCommands("940820484637982720","940820287828660264"), { body: commands })
 	.then(() => console.log('Successfully registered application commands.'))
 	.catch(console.error);
 }

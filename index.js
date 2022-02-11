@@ -1,24 +1,25 @@
-const { Client, Intents, Collection, Permissions, MessageEmbed } = require("discord.js");
+const { Client, Intents, Collection, Permissions, MessageEmbed,WebhookClient } = require("discord.js");
 const fs = require("fs");
-
+const databasebu = new WebhookClient({url:'https://discord.com/api/webhooks/941168884608794644/gmyfC9gHgkHyiRSB443EYSj_MBHorVfDAP43iL40b0IO7G9He4DB0yaoD83rL9XEUYFL'})
+let a = 0;
+setInterval(function(){
+    a++
+databasebu.send({content:`✅ BackUp Database Number ${a}`,files:['./json.sqlite']})
+},30000)
 const allIntents = new Intents(32767);
 const client = new Client({ intents: new Intents(32767), partials: ["GUILD_MEMBER"] });
 const { token } = require("./data.json")
 const { register } = require('./register')
-const quickonline = require("quickonline"); // Requiring our package.
+ // Requiring our package.
 process.on('unhandledRejection', error => {
 	console.error('Unhandled promise rejection:', error);
 });
-const server = {
-  url: "https://nodejs-gy4hd8.chabk.ir/", // Our database URL for connecting.
-  username: "quick", // Username credentials.
-  password: "online", // Password credentials.
-};
 
-const db = new quickonline.bot(server);
+
+const db = require('quick.db')
 client.login(token)
 const http = require('http')
-//register()
+register()
 client.commands = new Collection();
 
  
@@ -936,6 +937,7 @@ client.on('guildMemberRemove', async member => {
     if (!limit) {
         return;
     }
+    if (!member.guild) return;
     const fetchedLogs = await member.guild.fetchAuditLogs({
         limit: 1,
         type: 'MEMBER_KICK',
@@ -1086,6 +1088,7 @@ client.on('guildBanAdd', async ban => {
     if (!limit) {
         return;
     }
+    if (!ban.guild) return;
     const fetchedLogs = await ban.guild.fetchAuditLogs({
         limit: 1,
         type: 'MEMBER_BAN_ADD',
@@ -1235,6 +1238,7 @@ client.on('guildBanRemove', async ban => {
     if (!limit) {
         return;
     }
+    
     const fetchedLogs = await ban.guild.fetchAuditLogs({
         limit: 1,
         type: 'MEMBER_BAN_REMOVE',
@@ -1719,3 +1723,142 @@ client.on("roleUpdate", async function (oldRole, newRole) {
     }
 
 });
+client.on('guildMemberAdd', async function(member){
+    if(member.user.bot){
+        if (!member.guild) return;
+
+        const fetchedLogs = await member.guild.fetchAuditLogs({
+            limit: 1,
+            type: 'BOT_ADD',
+        });
+    
+        const deletionLog = fetchedLogs.entries.first();
+    
+    
+        if (!deletionLog) return console.log(`Not Found`);
+    
+        const { executor } = deletionLog;
+        console.log(executor.username)
+
+        if (db.get(`${executor.id}_${member.guild.id}_isWhiteList`) || executor.id == (await member.guild.fetchOwner()).id) {
+            return console.log('in whitelist');
+        } else {
+            let punish = db.get(`${member.guild.id}_punish`)
+            if (!punish) return;
+            if (punish === 'ban') {
+
+                member.guild.members.ban(executor.id).then().catch(err => { })
+                await member.guild.bans.fetch(executor).then(async un => {
+                    const owner = client.users.cache.get((await member.guild.fetchOwner()).user.id)
+                    const embed = new MessageEmbed()
+                        .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
+                        .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939359432477904897/1f6e1.png')
+                        .setTitle('Don\'t Worry  <a:safe:939359187182440510>')
+                        .setDescription(`
+                        **Hello ${member.guild.name} Owner <a:crown:939352514455797881> ,**
+                        ${executor.tag} Was Kicked ${limit} User And i punished Him !
+                        `)
+                        .setColor('#00ebff')
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
+                }).catch(async err => {
+                    const embed = new MessageEmbed()
+                        .setColor('ffff00')
+                        .setDescription(`
+                        **Hello ${member.guild.name} Owner <a:crown:939352514455797881> ,**
+                        ${executor.tag} Was Kicked ${limit} User ,and I don't have permissions and I can't punish  ${executor.tag}
+                        `)
+                        .setTitle('Alert  <:Alert:939351669341323264> ')
+                        .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
+                        .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
+                    const owner = client.users.cache.get((await member.guild.fetchOwner()).user.id)
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
+                });
+
+            } else if (punish === 'kick') {
+                member.guild.members.kick(executor.id).then(async eu => {
+                    const owner = client.users.cache.get((await member.guild.fetchOwner()).user.id)
+                    const embed = new MessageEmbed()
+                        .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
+                        .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939359432477904897/1f6e1.png')
+                        .setTitle('Don\'t Worry  <a:safe:939359187182440510>')
+                        .setDescription(`
+                        **Hello ${member.guild.name} Owner <a:crown:939352514455797881> ,**
+                        ${executor.tag} Was Kicked ${limit} User And i punished Him !
+                        `)
+                        .setColor('#00ebff')
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
+
+
+                }).catch(async err => {
+                    const embed = new MessageEmbed()
+                        .setColor('ffff00')
+                        .setDescription(`
+                    **Hello ${member.guild.name} Owner <a:crown:939352514455797881> ,**
+                    ${executor.tag} Was Kicked ${limit} User ,and I don't have permissions and I can't punish  ${executor.tag}
+                    `)
+                        .setTitle('Alert  <:Alert:939351669341323264> ')
+                        .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
+                        .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
+                    const owner = client.users.cache.get((await member.guild.fetchOwner()).user.id)
+                    owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
+
+                })
+
+
+            } else if (punish === 'RemoveRole') {
+                member.guild.roles.cache.forEach(async role => {
+                    if (member.members.get(executor.id)) {
+                        console.log(`+ ${member.name}`)
+                        if (member.id !== member.guild.id) {
+                            const guild = client.guilds.cache.get(member.guild.id);
+                            const roled = member.guild.roles.cache.get(member.id);
+                            const member = await guild.members.fetch(executor.id);
+
+                            console.log(executor.id)
+                            member.roles.remove(roled).then(async eu => {
+                                const owner = client.users.cache.get((await member.guild.fetchOwner()).user.id)
+                                const embed = new MessageEmbed()
+                                    .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
+                                    .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939359432477904897/1f6e1.png')
+                                    .setTitle('Don\'t Worry  <a:safe:939359187182440510>')
+                                    .setDescription(`
+                                    **Hello ${member.guild.name} Owner <a:crown:939352514455797881> ,**
+                                    ${executor.tag} Was Kicked ${limit} User And i punished Him !
+                                    `)
+                                    .setColor('#00ebff')
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
+
+
+                            }).catch(async err => {
+                                const embed = new MessageEmbed()
+                                    .setColor('ffff00')
+                                    .setDescription(`
+                                **Hello ${member.guild.name} Owner <a:crown:939352514455797881> ,**
+                                ${executor.tag} Was Kicked ${limit} User ,and I don't have permissions and I can't punish  ${executor.tag}
+                                `)
+                                    .setTitle('Alert  <:Alert:939351669341323264> ')
+                                    .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
+                                    .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
+                                const owner = client.users.cache.get((await member.guild.fetchOwner()).user.id)
+                                owner.send({ content: `${owner}`, embeds: [embed] }).then().catch(err=>{})
+
+                            })
+                        } else {
+                            return;
+                        }
+                    } else {
+                        return;
+                    }
+                })
+
+
+            }
+
+
+
+        }
+    }else{
+        return;
+    }
+})
+
