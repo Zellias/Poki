@@ -19,8 +19,8 @@ module.exports = {
         let websco = 0
         let totalsco = 10
         let embedse = []
-        let pokiAppId = '941210071172534365'
-        let pokiUserId = '940820484637982720'
+        let pokiAppId = '940433667686285335'
+        let pokiUserId = '937941354942722128'
         interaction.guild.roles.cache.forEach(role => {
             if (role.id == pokiAppId) return;
             if (role.permissions.serialize().ADMINISTRATOR || role.permissions.serialize().KICK_MEMBERS || role.permissions.serialize().BAN_MEMBERS || role.permissions.serialize().MANAGE_CHANNELS || role.permissions.serialize().MANAGE_GUILD || role.permissions.serialize().MENTION_EVERYONE || role.permissions.serialize().MANAGE_ROLES || role.permissions.serialize().MANAGE_WEBHOOKS || role.permissions.serialize().MODERATE_MEMBERS) {
