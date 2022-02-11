@@ -8,6 +8,7 @@ module.exports = {
         .setName('checkup')
         .setDescription('The Poki analyzes the server and gives You an score between 1 to 10'),
     async execute(interaction) {
+	    let owner = await interaction.guild.fetchOwner()
         if(interaction.user.id === owner.id || interaction.user.id ==="937377363346473030") {
 		
         let roleprm = '';
