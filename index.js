@@ -49,6 +49,159 @@ client.on('interactionCreate', async interaction => {
     }
 
 });
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isSelectMenu()) return;
+    if (interaction.customId === 'select') {
+    const row = new MessageActionRow()
+    .addComponents(
+        new MessageSelectMenu()
+            .setCustomId('select')
+            .setPlaceholder('Nothing selected')
+            .addOptions([
+                {
+                    label: 'Back',
+                    description: 'Back to main help menu',
+                    value: 'back',
+                    emoji:'941682848467918888',
+                },  
+            ]),
+    );
+
+	if (interaction.values[0] === 'one_main') {
+        const embed = new MessageEmbed()
+        .setColor('#fff2f2')
+		.setTitle('PoKi [Abilities]  Options <:exclamation:941682171838595103>')
+		.setDescription(`
+        > <:White_1:941682848467918888> **/ability channel_freeze [ True / False ] **
+ <:shield:941681612159062026> Create Channel after channel deleted by non whitelisted Users with same info !
+> <:White_2:941682992198336542> **/ability anti_link [ True / False ]**
+ <:shield:941681612159062026> Delete all server invite links by users who dont have manage_message permission
+> <:White_3:941683129582776351> **/ability anti_bot [ True / False ]**
+ <:shield:941681612159062026> Kick bot's invited by non whitelist users and punish that user who invited bot
+        `)
+        await interaction.update({ ephemeral:true, embeds: [embed], components: [row] });
+	}
+    if (interaction.values[0] === 'two_main') {
+        const embed = new MessageEmbed()
+        .setColor('#fff2f2')
+		.setTitle('PoKi [Limit]  Options <:exclamation:941682171838595103>')
+		.setDescription(`
+        > <:White_1:941682848467918888> **/setlimit channel [limit_number]**
+        <:shield:941681612159062026> Set channel [creation / deletion / update] limit
+       > <:White_2:941682992198336542> **/setlimit role [limit_number]**
+        <:shield:941681612159062026> Set role  [creation / deletion / update] limit
+       > <:White_3:941683129582776351> **/setlimit  ban [limit_number]**
+        <:shield:941681612159062026> Set [ban / unban] limit
+       > <:White_4:941683196280586241> **/setlimit emoji [limit_number]**
+       <:shield:941681612159062026> Set emoji  [add / remove] limit
+       > <:White_5:941683269324394526> **/setlimit  kick [limit_number]**
+       <:shield:941681612159062026> Set kick limit
+        `)
+        await interaction.update({ ephemeral:true, embeds: [embed], components: [row] });
+		
+	}
+    if (interaction.values[0] === 'three_main') {
+        const embed = new MessageEmbed()
+        .setColor('#fff2f2')
+		.setTitle('PoKi [Punishment]  Options <:exclamation:941682171838595103>')
+		.setDescription(`
+        > <:White_1:941682848467918888> **/punishment ban **
+        <:shield:941681612159062026> ban user when bot punished user for user reach server limit
+        > <:White_2:941682992198336542> **/punishment kick **
+        <:shield:941681612159062026> kick user when bot punished user for user reach server limit
+        > <:White_3:941683129582776351> **/punishment removerole**
+        <:shield:941681612159062026> remove all users roles when bot punished user for user reach server limit
+        `)
+        await interaction.update({ ephemeral:true, embeds: [embed], components: [row] });
+		
+	}
+    if (interaction.values[0] === 'four_main') {
+        const embed = new MessageEmbed()
+        .setColor('#fff2f2')
+		.setTitle('PoKi [2 Factor]  Options <:exclamation:941682171838595103>')
+		.setDescription(`
+        > <:White_1:941682848467918888> **/2fa get **
+        <:shield:941681612159062026> Get 2Factor authentication QRcode !
+        > <:White_2:941682992198336542> **/2fa verify [code]**
+        <:shield:941681612159062026> verify code [ the code you get from the application]
+        `)
+        await interaction.update({ ephemeral:true, embeds: [embed], components: [row] });
+	}
+    if (interaction.values[0] === 'five_main') {
+
+        const embed = new MessageEmbed()
+        .setColor('#fff2f2')
+		.setTitle('PoKi [whitelist]  Options <:exclamation:941682171838595103>')
+		.setDescription(`
+        > <:White_1:941682848467918888> **/whitelist add [mention user] **
+        <:shield:941681612159062026> add mentioned user to whitelist
+        > <:White_2:941682992198336542> **/whitelist remove [mention user]  **
+        <:shield:941681612159062026> remove mentioned user from whitelist
+        > <:White_3:941683129582776351> **/whitelist check [mention user] **
+        <:shield:941681612159062026> check mentioned user is whitelist?
+        `)
+        await interaction.update({ ephemeral:true, embeds: [embed], components: [row] });
+	}
+    if (interaction.values[0] === 'back') {
+        const row2 = new MessageActionRow()
+		.addComponents(
+			new MessageSelectMenu()
+				.setCustomId('select')
+				.setPlaceholder('Nothing selected')
+				.addOptions([
+					{
+						label: 'Abilities',
+						description: 'Bot abilities are options can help your server be more secure than before !',
+						value: 'one_main',
+						emoji:'941682848467918888',
+					},
+					{
+						label: 'Limit',
+						description: 'With limit option you can track all dangerous activity and defend them !',
+						value: 'two_main',
+						emoji:'941682992198336542',
+					},
+					{
+						label: 'Punishment',
+						description: 'With this option you can set punishment for who reach Limits',
+						value: 'three_main',
+						emoji:'941683129582776351',
+					},
+					{
+						label: '2 Factor',
+						description: 'Wanna add Moderator? You need first active this option to add bot moderator  !',
+						value: 'four_main',
+						emoji:'941683196280586241',
+					},
+					{
+						label: 'Whitelist',
+						description: 'Add your trusted users to your server whitelist',
+						value: 'five_main',
+						emoji:'941683269324394526',
+					},
+					
+				]),
+		);
+        const embed = new MessageEmbed()
+		.setColor('#fff2f2')
+		.setTitle('PoKi Options <:exclamation:941682171838595103>')
+		.setDescription(`
+		> <:White_1:941682848467918888> **Abilities**
+ <:shield:941681612159062026> Bot abilities are options can help your server be more secure than before !
+> <:White_2:941682992198336542> **Limit**
+ <:shield:941681612159062026> With limit option you can track all dangerous activity and defend them !
+> <:White_3:941683129582776351> **Punishment**
+ <:shield:941681612159062026> With this option you can set punishment for who reach **Limit**s
+> <:White_4:941683196280586241> **2 Factor**
+<:shield:941681612159062026> Wanna add Moderator? You need first active this option to add bot moderator  !
+> <:White_5:941683269324394526> **Whitelist**
+<:shield:941681612159062026> Add your trusted users to your server whitelist
+		`);
+		await interaction.update({ ephemeral:true,  embeds: [embed], components: [row2] });
+	}
+
+    }
+});
 client.on('ready', () => {
     client.user.setPresence({ activities: [{ name: 'Watching Users Action ⚠️' }] });
 })
