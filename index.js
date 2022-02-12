@@ -74,10 +74,6 @@ client.on('interactionCreate', async interaction => {
 		.setDescription(`
         > <:White_1:941682848467918888> **/ability channel_freeze [ True / False ] **
  <:shield:941681612159062026> Create Channel after channel deleted by non whitelisted Users with same info !
-> <:White_2:941682992198336542> **/ability anti_link [ True / False ]**
- <:shield:941681612159062026> Delete all server invite links by users who dont have manage_message permission
-> <:White_3:941683129582776351> **/ability anti_bot [ True / False ]**
- <:shield:941681612159062026> Kick bot's invited by non whitelist users and punish that user who invited bot
         `)
         await interaction.update({ ephemeral:true, embeds: [embed], components: [row] });
 	}
