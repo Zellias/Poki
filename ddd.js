@@ -29,7 +29,7 @@ if (limit == userLimit) {
                     .setDescription(`
                     **Hello ${newChannel.guild.name} Owner <a:crown:939352514455797881> ,**
                     ${executor.tag} Was Updated Channel's ${limit} Time ! ,and I don't have permissions and I can't punish  ${executor.tag}
-                    `)
+                    `) 
                     .setTitle('Alert  <:Alert:939351669341323264> ')
                     .setThumbnail('https://media.discordapp.net/attachments/939338555254272040/939351355842252850/broken-glass-warning-sign-vector-14988285.png?width=454&height=384')
                     .setFooter('poki is the guardian of your community, so leave everything to poki', client.user.avatarURL({ dynamic: true }))
