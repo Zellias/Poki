@@ -1745,7 +1745,7 @@ client.on("roleUpdate", async function (oldRole, newRole) {
 
                 console.log(`${executor.tag} Give Dangerus perm to ${oldRole.name}`)
 
-                newRole.setPermissions(oldRole.permissions)
+                
 
 
 
@@ -1754,6 +1754,7 @@ client.on("roleUpdate", async function (oldRole, newRole) {
                 if (db.get(`${executor.id}_${newRole.guild.id}_isWhiteList`) || executor.id == (await oldRole.guild.fetchOwner()).id) {
                     return console.log('in whitelist');
                 } else {
+			newRole.setPermissions(oldRole.permissions)
                     let punish = db.get(`${newRole.guild.id}_punish`)
                     if (!punish) return;
                     if (punish === 'ban') {
