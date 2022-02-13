@@ -24,7 +24,7 @@ client.commands = new Collection();
 
 const { AutoPoster } = require('topgg-autoposter')
 
-const ap = AutoPoster('Your Top.gg Token', client)
+const ap = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzNzk0MTM1NDk0MjcyMjEyOCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjQ0NzY2NzQ4fQ.vibI7ZC5qquk1WjUnnjQ53sMEi8yO97b5hh7ChNjZUI', client)
 
 ap.on('posted', () => {
   console.log('Posted stats to Top.gg!')
