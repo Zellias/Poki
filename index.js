@@ -22,6 +22,13 @@ const http = require('http')
 //register()
 client.commands = new Collection();
 
+const { AutoPoster } = require('topgg-autoposter')
+
+const ap = AutoPoster('Your Top.gg Token', client)
+
+ap.on('posted', () => {
+  console.log('Posted stats to Top.gg!')
+})
  
 const commandFolders = fs.readdirSync('./commands')
 for (const folder of commandFolders) {
