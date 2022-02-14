@@ -59,7 +59,7 @@ client.on('guildCreate', async function (guild) {
     🛡️ | Added By : ${executor.tag}
     `)
     .setColor('#1F2B8F')
-      .setThumbnail(guild.icon)
+
       channel.send({embeds:[embed]})
 
 })
