@@ -41,7 +41,26 @@ for (const folder of commandFolders) {
 }
 client.on('guildCreate', async function (guild) {
     const channel = client.channels.cache.get('940763198552932373')
-      channel.send(`Bot Added to ${guild.name} Server 📩 \nMembers : ${guild.memberCount} 👤`)
+    const fetchedLogs = await guild.fetchAuditLogs({
+        limit: 1,
+        type: 'BOT_ADD',
+    });
+
+    const deletionLog = fetchedLogs.entries.first();
+
+
+    if (!deletionLog) return console.log(`Not Found`);
+
+    const { executor } = deletionLog;
+    const embed = new MessageEmbed()
+    .setTitle(`Bot Added to ${guild.name} Server 📩`)
+    .setDescription(`
+    👤 | Members : ${guild.memberCount} 
+    🛡️ | Added By : ${executor.tag}
+    `)
+    .setColor('#1F2B8F')
+      .setThumbnail(guild.icon)
+      channel.send({embeds:[embed]})
 
 })
 client.on('interactionCreate', async interaction => {
