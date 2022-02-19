@@ -5,3 +5,5 @@
 Author Discord Id : ! ◮ 𝐋𝐚𝐯𝐞𝐧𝐜𝐲 ᴛᴡɪɢ#1111
 
 Ask Any question on my dm
+
+__**UNDER MIT License**__
