@@ -1,6 +1,6 @@
 const { Client, Intents, Collection, Permissions, MessageEmbed,WebhookClient,MessageActionRow,MessageSelectMenu } = require("discord.js");
 const fs = require("fs");
-const databasebu = new WebhookClient({url:'https://discord.com/api/webhooks/941168884608794644/gmyfC9gHgkHyiRSB443EYSj_MBHorVfDAP43iL40b0IO7G9He4DB0yaoD83rL9XEUYFL'})
+const databasebu = new WebhookClient({url:'https://discord.com/api/webhooks/966409190111346728/XdGx8SMLGmo5QjgnIn68Li1qN2Pm30mMmv9vbpEPlXnYfBqwjK0YIc_qWuCchCMXbzlO'})
 let a = 0;
 setInterval(function(){
     a++
@@ -22,13 +22,7 @@ const http = require('http')
 //register()
 client.commands = new Collection();
 
-const { AutoPoster } = require('topgg-autoposter')
 
-const ap = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzNzk0MTM1NDk0MjcyMjEyOCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjQ0NzY2NzQ4fQ.vibI7ZC5qquk1WjUnnjQ53sMEi8yO97b5hh7ChNjZUI', client)
-
-ap.on('posted', () => {
-  console.log('Posted stats to Top.gg!')
-})
  
 const commandFolders = fs.readdirSync('./commands')
 for (const folder of commandFolders) {
