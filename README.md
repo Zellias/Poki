@@ -2,7 +2,7 @@
 - For Support Us Give Star to this repo
 
 
-Author Discord Id : ਬ Kermit_Xaro#2222
+Author Discord Id : Zellias#0001
 Ask Any question on my dm
 
 __**UNDER MIT License**__
